@@ -61,10 +61,7 @@ def basic(type='artist-radio', artist_id=None, artist=None, song_id=None, song=N
 def static(type='artist', artist_pick='song_hotttnesss-desc', variety=.5, artist_id=None, artist=None, song_id=None,
            track_id=None, description=None, style=None, mood=None, results=15, max_tempo=None, min_tempo=None,
            max_duration=None, min_duration=None, max_loudness=None, min_loudness=None, max_danceability=None,
-           min_danceability=None, max_energy=None, min_energy=None, artist_max_familiarity=None,
-           artist_min_familiarity=None, artist_max_hotttnesss=None, artist_min_hotttnesss=None,
-           song_max_hotttnesss=None, song_min_hotttnesss=None, min_longitude=None, max_longitude=None,
-           min_latitude=None, max_latitude=None, adventurousness=0.2, mode=None, key=None, buckets=None, sort=None,
+           min_danceability=None, max_energy=None, min_energy=None, max_valence=None, min_valence=None, max_instrumentalness=None, min_instrumentalness=None, artist_max_familiarity=None, artist_min_familiarity=None, artist_max_hotttnesss=None, artist_min_hotttnesss=None, song_max_hotttnesss=None, song_min_hotttnesss=None, min_longitude=None, max_longitude=None,           min_latitude=None, max_latitude=None, adventurousness=0.2, mode=None, key=None, buckets=None, sort=None,
            limit=False, seed_catalog=None, source_catalog=None, rank_type=None, test_new_things=None,
            artist_start_year_after=None, artist_start_year_before=None, artist_end_year_after=None,
            artist_end_year_before=None, dmca=False, distribution=None, song_type=None, genres=None):
@@ -122,6 +119,14 @@ def static(type='artist', artist_pick='song_hotttnesss-desc', variety=.5, artist
         max_energy (float): The max energy of song results
     
         min_energy (float): The min energy of song results
+
+        max_valence (float): The max valence of song results
+
+        min_valence (float): The min valence of song results
+
+        max_instrumentalness (float): The max instrumentalness of song results
+
+        min_instrumentalness (float): The min instrumentalness of song results
     
         max_danceability (float): The max danceability of song results
     
@@ -222,7 +227,7 @@ class Playlist(PlaylistProxy):
             self, session_id=None, type=None, artist_pick=None, variety=None, artist_id=None, artist=None, song_id=None,
             track_id=None, description=None, style=None, mood=None, max_tempo=None, min_tempo=None, max_duration=None,
             min_duration=None, max_loudness=None, min_loudness=None, max_danceability=None, min_danceability=None,
-            max_energy=None, min_energy=None, artist_max_familiarity=None, artist_min_familiarity=None,
+            max_energy=None, min_energy=None, max_valence=None, min_valence=None, max_instrumentalness=None, min_instrumentalness=None, artist_max_familiarity=None, artist_min_familiarity=None,
             artist_max_hotttnesss=None, artist_min_hotttnesss=None, song_max_hotttnesss=None, song_min_hotttnesss=None,
             min_longitude=None, max_longitude=None, min_latitude=None, max_latitude=None, adventurousness=None,
             mode=None, key=None, buckets=None, sort=None, limit=False, seed_catalog=None, source_catalog=None,
@@ -258,6 +263,10 @@ class Playlist(PlaylistProxy):
             min_danceability=min_danceability,
             max_energy=max_energy,
             min_energy=min_energy,
+            max_valence=max_valence,
+            min_valence=min_valence,
+            max_instrumentalness=max_instrumentalness,
+            min_instrumentalness=min_instrumentalness,
             artist_max_familiarity=artist_max_familiarity,
             artist_min_familiarity=artist_min_familiarity,
             artist_max_hotttnesss=artist_max_hotttnesss,
@@ -362,6 +371,10 @@ class Playlist(PlaylistProxy):
         min_danceability=None,
         max_energy=None,
         min_energy=None,
+        max_valence=None,
+        min_valence=None,
+        max_instrumentalness=None,
+        min_instrumentalness=None,
         artist_max_familiarity=None,
         artist_min_familiarity=None,
         artist_max_hotttnesss=None,
@@ -421,6 +434,10 @@ class Playlist(PlaylistProxy):
             min_danceability=min_danceability,
             max_energy=max_energy,
             min_energy=min_energy,
+            max_valence=max_valence,
+            min_valence=min_valence,
+            max_instrumentalness=max_instrumentalness,
+            min_instrumentalness=min_instrumentalness,
             artist_max_familiarity=artist_max_familiarity,
             artist_min_familiarity=artist_min_familiarity,
             artist_max_hotttnesss=artist_max_hotttnesss,
@@ -468,6 +485,10 @@ class Playlist(PlaylistProxy):
         max_energy=None,
         min_energy=None,
         target_energy=None,
+        max_valence=None,
+        min_valence=None,
+        max_instrumentalness=None,
+        min_instrumentalness=None,
         max_artist_familiarity=None,
         min_artist_familiarity=None,
         target_artist_familiarity=None,
@@ -506,6 +527,10 @@ class Playlist(PlaylistProxy):
             max_energy=max_energy,
             min_energy=min_energy,
             target_energy=target_energy,
+            max_valence=max_valence,
+            min_valence=min_valence,
+            max_instrumentalness=max_instrumentalness,
+            min_instrumentalness=min_instrumentalness,
             max_artist_familiarity=max_artist_familiarity,
             min_artist_familiarity=min_artist_familiarity,
             target_artist_familiarity=target_artist_familiarity,
